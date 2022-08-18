@@ -1,7 +1,7 @@
 
 // random function
 function rand(i, j){
-  var rndm = i+Math.floor(Math.random()*(j-i+1));
+  var rndm = i+Math.floor(Math.random() * (j-i+1) + i);
   console.log("random num generated: " + rndm);
   return rndm;
 }
@@ -25,6 +25,7 @@ function stopAudio(index){
 const inputEl = document.getElementById("input-el");
 const goBtn = document.getElementById("go-btn");
 const tileBd = document.getElementById("tile-board");
+// var index = rand(0, 7);
 var index = 0;
 console.log("index value created: " + index);
 
@@ -66,17 +67,12 @@ goBtn.addEventListener("click", function(){
     tl.addEventListener("mouseover", function(){
       console.log("index value inside mouseover event: " + index);
       // calling random function for random number between 0 and 7 for playing the first random note
-      var rndm = rand(index, 7);
-      console.log("rndm value generated from rand call: " + rndm);
-      if(rndm>7 || index == 7){
-        // index 0 again so we can start playing random note again
-        index = 0;
-        console.log("if-else index1: " + index);
+      if(index == 0 || index == 7){
+        index = rand(0, 7);
+        console.log("random index made if-else: " + index);
       }
       else{
-        // to play next note in order of the first random note played
         index++;
-        console.log("if-else index2: " + index);
       }
 
       // generate random color then change it for each tile hover
