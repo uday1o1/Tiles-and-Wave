@@ -1,5 +1,5 @@
 # Web-Dev-Task-3 (Team: Uday and Swathika)
-Task: 
+Task:
 To create a tile grid based on a given input and play a sound from the 8 notes(Do, re, mi, fa, so, la, ti, do) based on the following conditions:
 1. For the first hover the site should play a random notes from the 8 notes.
 2. While the last played note is not index = 0 or index = 7(i.e the first and last note) then the next note played should be next in the order.
