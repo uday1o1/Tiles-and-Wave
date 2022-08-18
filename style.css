@@ -1,1 +1,13 @@
+.tile{
+  /* transition delay to add delay between hover and tile transitions */
+  transition-delay: 0.5s;
+  height: 100px;
+  width: 100px;
+  display: inline-block;
+  border: 1px solid black;
+  color: white;
+}
 
+.tile:hover{
+  transition-delay: 0.2s;
+}
