@@ -2,7 +2,7 @@
 // random function
 function rand(i, j){
   var rndm = i+Math.floor(Math.random() * (j-i+1) + i);
-  console.log("random num generated: " + rndm);
+  console.log("random num generated in rand function: " + rndm);
   return rndm;
 }
 
@@ -26,14 +26,14 @@ const inputEl = document.getElementById("input-el");
 const goBtn = document.getElementById("go-btn");
 const tileBd = document.getElementById("tile-board");
 // var index = rand(0, 7);
-var index = 0;
-console.log("index value created: " + index);
+var index = 8;
+console.log("index value during declaration: " + index);
 
 goBtn.addEventListener("click", function(){
   console.log("index value inside click event: " + index);
   // if statement so onclick func doesn't execute with null input for matrix order
   if(inputEl.value){
-    console.log("index value inside input-el condition: " + index);
+    console.log("index value after input-el condition: " + index);
     let n = inputEl.value;
     console.log("order of matrix input: " + n);
     // changing inner html to add rows and columns
@@ -67,9 +67,9 @@ goBtn.addEventListener("click", function(){
     tl.addEventListener("mouseover", function(){
       console.log("index value inside mouseover event: " + index);
       // calling random function for random number between 0 and 7 for playing the first random note
-      if(index == 0 || index == 7){
+      if(index >= 7){
         index = rand(0, 7);
-        console.log("random index made if-else: " + index);
+        console.log("random index made for next hover after 7th track: " + index);
       }
       else{
         index++;
@@ -81,7 +81,7 @@ goBtn.addEventListener("click", function(){
       console.log("Hash value generated: " + colorHash);
       tl.style.backgroundColor = colorHash;
       // playing audio based on index
-      console.log("index value sent to func: " + index);
+      console.log("index value sent to start/stop func: " + index);
       tl.addEventListener('mouseover', playAudio(index));
       // stopping audio with specified time-interval
       setTimeout(tl.addEventListener('mouseleave', stopAudio(index)), 1000);
