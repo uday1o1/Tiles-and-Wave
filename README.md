@@ -1,8 +1,8 @@
-# Web-Dev-Task-3 (Team: Uday and Swathika)
+# Tiles and Wave!! (Task-3, Team: Uday and Swathika)
 Task:
-To create a tile grid based on a given input and play a sound from the 8 notes(Do, re, mi, fa, so, la, ti, do) based on the following conditions:
-1. For the first hover the site should play a random notes from the 8 notes.
-2. While the last played note is not index = 0 or index = 7(i.e the first and last note) then the next note played should be next in the order.
+To create a tile grid based on the given input and to play a sound from the 8 musical notes (Do, re, mi, fa, so, la, ti, do) based on the following conditions:
+1. For the first hover the site should play a random note from the 8 notes.
+2. While the last played note is not pf index = 0 or index = 7(i.e the first and last note) then the next note played should be next in the order.
 3. If the last note played has index 7(i.e the 8th note) then the next note played will be random like in the first condition.
 
 Approach to the problem:
