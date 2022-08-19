@@ -25,7 +25,6 @@ function stopAudio(index){
 const inputEl = document.getElementById("input-el");
 const goBtn = document.getElementById("go-btn");
 const tileBd = document.getElementById("tile-board");
-// var index = rand(0, 7);
 var index = 8;
 console.log("index value during declaration: " + index);
 
@@ -50,7 +49,7 @@ goBtn.addEventListener("click", function(){
           var tileKey = i*n + (j+1);
           // creating 
           // div needed to make each tile having the same class "tile" for css and unique id = tileKey to do specific attribute changes on tile hover
-          htmlAdd += `<div class = "tile" id = "tl" + ${tileKey} + > </div>`;
+          htmlAdd += `<div class = "tile tile-spec" id = "tl" + ${tileKey} + > </div>`;
       }
       // ending div only needed at block end
       htmlAdd += `</div>`;
