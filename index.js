@@ -1,3 +1,11 @@
+// tile input
+const inputEl = document.getElementById("input-el");
+let goBtn = document.getElementById("go-btn");
+const tileBd = document.getElementById("tile-board");
+const tileHd = document.getElementById("tile-head");
+const startInp = document.getElementById("start-input");
+var index = 7;
+console.log("index value during declaration: " + index);
 
 // random function
 function rand(i, j){
@@ -21,14 +29,22 @@ function stopAudio(index){
   audio.pause();
   }
 
-// tile input
-const inputEl = document.getElementById("input-el");
-const goBtn = document.getElementById("go-btn");
-const tileBd = document.getElementById("tile-board");
-var index = 8;
 console.log("index value during declaration: " + index);
 
 goBtn.addEventListener("click", function(){
+
+  // adding inner html to load "Tile Matrix" heading on click
+  tileHd.innerHTML = `<h2><em>Tile Map</em></h2>`;
+  // changing input and button tag to reload button on click
+  startInp.innerHTML = `<button id="rel-btn">Reload</button>`;
+  let relBtn = document.getElementById("rel-btn");
+  relBtn.addEventListener('click', function(){
+    tileBd.innerHTML = "";
+    tileHd.innerHTML = "";
+    startInp.innerHTML = `<input type="text" id="input-el" class="form_input" placeholder="Order of Sound Matrix" required=""><button id="go-btn">GO!</button>`;
+    goBtn = document.getElementById("go-btn");
+  });
+
   console.log("index value inside click event: " + index);
   // if statement so onclick func doesn't execute with null input for matrix order
   if(inputEl.value){
@@ -60,9 +76,11 @@ goBtn.addEventListener("click", function(){
   // need to make color changes to each tile based on the random function and hover(mouse-over) event
   const tiles = document.querySelectorAll('.tile');
   // run hover function call for each tile using "for each" function
+
   tiles.forEach(function(tl){
     console.log("index inside tiles.forEach: " + index);
     // mouse over event to play song and show highlighted tile for hover over each tile
+
     tl.addEventListener("mouseover", function(){
       console.log("index value inside mouseover event: " + index);
       // calling random function for random number between 0 and 7 for playing the first random note
@@ -79,6 +97,7 @@ goBtn.addEventListener("click", function(){
       var colorHash = "#" + Math.floor(Math.random()*16777215).toString(16);
       console.log("Hash value generated: " + colorHash);
       tl.style.backgroundColor = colorHash;
+
       // playing audio based on index
       console.log("index value sent to start/stop func: " + index);
       tl.addEventListener('mouseover', playAudio(index));
@@ -86,8 +105,6 @@ goBtn.addEventListener("click", function(){
       setTimeout(tl.addEventListener('mouseleave', stopAudio(index)), 1000);
     });
 
-
   });
-
   }
 });
