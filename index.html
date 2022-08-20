@@ -3,16 +3,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="shortcut icon" href="favicon/favicon.ico"> -->
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="stylesheet" href="style.css">
     <title>Sound Board</title>
     </head>
     <body>
         <h1>Sound Board</h1> 
-        <input type="text" id="input-el" class="form_input" placeholder="enter order of matrix here" required="">
-        <button id="go-btn" class="form_button" >GO!</button>
-        <h2><em>Tile Map</em></h2>
+        <div id="start-input">
+            <input type="text" id="input-el" class="form_input" placeholder="Order of Sound Matrix" required="">
+            <button id="go-btn">GO!</button>
+        </div>
+        <div id="tile-head"></div>
         <div id="tile-board"></div>
         <script src="index.js"></script>
     </body>
 </html>
+
