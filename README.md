@@ -1,4 +1,4 @@
-<h2 align="center">Tiles and Wave!</h2>
+<h1 align="center">Tiles and Wave!</h1>
 <br/>
 
 > Task:
@@ -6,6 +6,11 @@ To create a tile grid based on the given input and to play a sound from the 8 mu
 1. For the first hover the site should play a random note from the 8 notes.
 2. While the last played note is of index between 0 and 6(i.e one of the 8 tracks) then the next note will be played from the track queue/ 
 3. If the last note played has index 7(i.e the 8th track) then a random note from the 8 tracks will be played.
+
+## GitHub Pages Link: 
+<p align="left">
+<a href="https://uday1o1.github.io/Tiles-and-Wave/" target="_blank">Tiles-and-Wave</a>
+</p>
 
 ## Screenshots
 <p align="center">
