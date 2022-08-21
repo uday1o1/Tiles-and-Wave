@@ -1,10 +1,11 @@
 // tile input
 const inputEl = document.getElementById("input-el");
-let goBtn = document.getElementById("go-btn");
+const goBtn = document.getElementById("go-btn");
 const tileBd = document.getElementById("tile-board");
 const tileHd = document.getElementById("tile-head");
 const startInp = document.getElementById("start-input");
 var index = 7;
+var count = 0;
 console.log("index value during declaration: " + index);
 
 // random function
@@ -33,18 +34,7 @@ console.log("index value during declaration: " + index);
 
 goBtn.addEventListener("click", function(){
 
-  // adding inner html to load "Tile Matrix" heading on click
-  tileHd.innerHTML = `<h2><em>Tile Map</em></h2>`;
   // changing input and button tag to reload button on click
-  startInp.innerHTML = `<button id="rel-btn">Reload</button>`;
-  let relBtn = document.getElementById("rel-btn");
-  relBtn.addEventListener('click', function(){
-    tileBd.innerHTML = "";
-    tileHd.innerHTML = "";
-    startInp.innerHTML = `<input type="text" id="input-el" class="form_input" placeholder="Order of Sound Matrix" required=""><button id="go-btn">GO!</button>`;
-    goBtn = document.getElementById("go-btn");
-  });
-
   console.log("index value inside click event: " + index);
   // if statement so onclick func doesn't execute with null input for matrix order
   if(inputEl.value){
@@ -102,9 +92,26 @@ goBtn.addEventListener("click", function(){
       console.log("index value sent to start/stop func: " + index);
       tl.addEventListener('mouseover', playAudio(index));
       // stopping audio with specified time-interval
-      setTimeout(tl.addEventListener('mouseleave', stopAudio(index)), 1000);
+      setTimeout(tl.addEventListener('mouseleave', stopAudio(index)), 2000);
     });
 
   });
   }
+  
+  count++;
+  if(count%2 != 0){
+    // adding inner html to load "Tile Matrix" heading on click
+    tileHd.innerHTML = `<h2><em>Tile Map</em></h2>`;
+    goBtn.textContent = "Reload";
+    inputEl.value = "";
+    inputEl.style.display = "none";
+  }
+  else{
+    goBtn.textContent = "GO!";
+    tileHd.innerHTML = "";
+    tileBd.innerHTML = "";
+    inputEl.style.display = "";
+
+  }
+
 });
