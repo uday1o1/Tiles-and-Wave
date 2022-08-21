@@ -98,15 +98,17 @@ goBtn.addEventListener("click", function(){
   });
   }
   
+  // making changes to inner HTML and css styling to make changes to website on button click for start and reload page
   count++;
   if(count%2 != 0){
-    // adding inner html to load "Tile Matrix" heading on click
     tileHd.innerHTML = `<h2><em>Tile Map</em></h2>`;
-    goBtn.textContent = "Reload";
+    goBtn.style.width = "90px";
+    goBtn.textContent = "Reload \u27F3";
     inputEl.value = "";
     inputEl.style.display = "none";
   }
   else{
+    goBtn.style.width = "75px";
     goBtn.textContent = "GO!";
     tileHd.innerHTML = "";
     tileBd.innerHTML = "";
